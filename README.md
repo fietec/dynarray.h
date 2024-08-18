@@ -7,7 +7,7 @@ The header file consists of a singular macro which creates the data structure an
   - printing a reprensentation (customizable with function pointer for value printing)
   - freeing the allocated memory (customizable with function pointer for value freeing)
 #2 How to use
-```
+``` c
   #include "dynarray.h" // include the header file
 
   DEFINE_DYNAMIC_ARRAY(Ints, int) // define the dats structure and its functions with a name (here 'Ints') and the type of the stored values (here <int>)
