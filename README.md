@@ -6,7 +6,7 @@ The header file consists of a singular macro which creates the data structure an
   - pushing a value 
   - printing a reprensentation (customizable with function pointer for value printing)
   - freeing the allocated memory (customizable with function pointer for value freeing)
-#2 How to use
+# How to use
 ``` c
   #include "dynarray.h" // include the header file
 
