@@ -24,6 +24,6 @@ The header file consists of a singular macro which creates the data structure an
     Ints_free(ints, NULL); // free the memory allocated for the dynamic array and ignore the stored values
     Ints_free(ints, &free_my_type); // free the memory allocated for the dynamic array and use a custom function for freeing the memory of the stored values
     
-    return 0; // heard thats a good idea..
+    return 0; // heard that's a good idea..
   }
 ```
