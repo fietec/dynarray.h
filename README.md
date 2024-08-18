@@ -1,5 +1,5 @@
 # dynarray.h
-A simple header-only c program for creating dynamic arrays of any specific type.
+A simple header-only c library for creating dynamic arrays of any specific type.
 
 The header file consists of a singular macro which creates the data structure and corresponding functions for:
   - creating
