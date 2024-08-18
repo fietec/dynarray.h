@@ -48,7 +48,7 @@
         puts("[");\
         for (int i=0; i<d_array->size; ++i){\
             printf("    Index: % 3d : ", i);\
-            if (func){\
+            if (func != NULL){\
                 func(d_array->items[i]);\
                 putchar('\n');\
             }\
@@ -61,8 +61,10 @@
     void name##_free(name##_t* d_array, f_func func){\
         if (d_array){\
             if (d_array->items){\
-                for (int i=0; i<d_array->size; ++i){\
-                    if (func != NULL) {func(d_array->items[i]);}\
+                if (func != NULL){\
+                    for (int i=0; i<d_array->size; ++i){\
+                        func(d_array->items[i]);\
+                    }\
                 }\
                 free(d_array->items);\
             }\
