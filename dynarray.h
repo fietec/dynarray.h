@@ -17,9 +17,9 @@
         type* items;\
         size_t size;\
         size_t capacity;\
-    } name##_t;\
-    name##_t* name##_create(size_t capacity){\
-        name##_t* d_array = (name##_t*) malloc(sizeof(name##_t));\
+    } name;\
+    name* name##_create(size_t capacity){\
+        name* d_array = (name*) malloc(sizeof(name));\
         if (d_array){\
             type* items = (type*) calloc(capacity, sizeof(type));\
             if (!items){\
@@ -32,7 +32,7 @@
         }\
         return d_array;\
     }\
-    int name##_push(name##_t* d_array, type value){\
+    int name##_push(name* d_array, type value){\
         if (!d_array || !d_array->items) return 1;\
         if (d_array->size >= d_array->capacity){\
             size_t new_capacity = d_array->capacity*2;\
@@ -44,7 +44,7 @@
         d_array->items[d_array->size++] = value;\
         return 0;\
     }\
-    void name##_print(name##_t* d_array, p_func func){\
+    void name##_print(name* d_array, p_func func){\
         puts("[");\
         for (int i=0; i<d_array->size; ++i){\
             printf("    Index: % 3d : ", i);\
@@ -58,7 +58,7 @@
         }\
         puts("]\n");\
     }\
-    void name##_free(name##_t* d_array, f_func func){\
+    void name##_free(name* d_array, f_func func){\
         if (d_array){\
             if (d_array->items){\
                 if (func != NULL){\
