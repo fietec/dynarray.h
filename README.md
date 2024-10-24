@@ -14,15 +14,15 @@ The header file consists of a singular macro which creates the data structure an
 
   int main(void)
   {
-    Ints_t* ints = Ints_create(16); // create the dynamic array of type <Name>_t with a initial capacity of 16
+    Ints* ints = Ints_create(16); // create the dynamic array of type Ints with a initial capacity of 16
     for (size_t i=0; i<18; ++i){
       Ints_push(ints, i); // push a value to the dynamic array
     }
-    Ints_print(ints, NULL); // print a representation of the dynamic array with placeholders for the values
-    Ints_print(ints, &print_my_type); // print a reprensentation of the dynamic array with a custom function printing the value
+    /*either*/ Ints_print(ints, NULL); // print a representation of the dynamic array with placeholders for the values
+    /*or*/     Ints_print(ints, &print_my_type); // print a reprensentation of the dynamic array with a custom function printing the value
 
-    Ints_free(ints, NULL); // free the memory allocated for the dynamic array and ignore the stored values
-    Ints_free(ints, &free_my_type); // free the memory allocated for the dynamic array and use a custom function for freeing the memory of the stored values
+    /*either*/ Ints_free(ints, NULL); // free the memory allocated for the dynamic array and ignore the stored values
+    /*or*/     Ints_free(ints, &free_my_type); // free the memory allocated for the dynamic array and use a custom function for freeing the memory of the stored values
     
     return 0; // heard that's a good idea..
   }
